@@ -72,7 +72,7 @@ edits:
     enable_output: true
     color: blue
     icon: fa-magnifying-glass
-crowdsource: custom
+crowdsource: prolific
 database:
   type: firebase
   project_id: annotations-8cec4
