@@ -1,0 +1,82 @@
+template_name: RationaleAnnotations
+template_label: RationaleAnnotations
+template_description: Annotate rationales for words corresponding to the labels.
+prepend_instructions: false
+instructions: |
+  ## Instructions
+
+  Highlight the relevant words (multiple) from the rationale that correspond to
+  the question and its answer label.
+
+  #### Workflow
+
+  Click "Add Edit" > Hit "Relevant Words" > Select words from "Rationale" > Hit
+  "Save".
+interface_text:
+  landing_page:
+    header_text: Annotating with
+    drag_drop_begin: 'Drag &amp; drop, or '
+    drag_drop_underline: click here
+    drag_drop_after: ' to add an annotation file'
+    options_header: or
+    tutorial_link: See Tutorial
+    examples_link: View Example Data
+    builder_link: Customize this Template
+    paper_link: View Paper
+  comment_box:
+    label: Comment
+    placeholder: Comment on this HIT ...
+  typology:
+    context_label: Question/Choices
+    source_label: Answer Label
+    target_label: Rationale
+  buttons:
+    save_label: Save
+    cancel_label: Cancel
+    add_edit_label: Add Edit
+    instructions_label: Instructions
+    show_context_label: Show Context
+    hide_context_label: Hide Context
+  hit_box:
+    hit_label: Hit
+  annotation_editor:
+    add_edit_header: Adding an Edit
+    select_edit_header: Select the Edit Category.
+    select_instructions: Select the text span from the
+    selected_label: Selected
+    annotating_edit_header: Annotating an Edit
+    composite_seletion_instructions: 'Click the edits that associated with '
+    composite_span_unification: with
+  adjudication:
+    highlight_label: Your Annotations
+  annotation_viewer:
+    header: Edit Annotations
+    not_annotated_text_1: this edit is not annotated yet, click
+    not_annotated_text_2: to start!
+  questions:
+    binary_yes: 'Yes'
+    binary_no: 'No'
+    likert_1: 1 - minor
+    likert_2: 2 - somewhat
+    likert_3: 3 - a lot
+    textbox_placeholder: Write your answer...
+disable:
+  - download
+  - upload
+  - annotation
+edits:
+  - name: relevant_words
+    type: multi_span
+    label: Relevant Words
+    enable_input: false
+    enable_output: true
+    color: blue
+    icon: fa-magnifying-glass
+crowdsource: custom
+database:
+  type: firebase
+  project_id: annotations-8cec4
+  url: https://annotations-8cec4.firebaseio.com/
+  collection: thresh
+  document: annotations
+  field: annotation_set_1
